@@ -1,0 +1,38 @@
+<div class = "card">
+ <h5>
+     {{title}}
+ </h5>
+ <h3>
+     <h1>
+     {{price}}$</h1>/month
+ </h3>
+ <ul id="features">
+     <li class="not-strike">
+         {{users}} users
+     </li><br>
+     <li class="not-strike"> 
+         {{storage}} GB
+     </li><br>
+     <li [ngClass] ="{strike : publicProjects<1,'not-strike': publicProjects>=1}">
+        public Projects
+     </li><br>
+     <li [ngClass] ="{strike : communityAccess<1 ,'not-strike': communityAccess>=1}">
+        community Access
+     </li><br>
+     <li [ngClass] ="{strike : privateProjects<1 ,'not-strike': privateProjects>=1}">
+        unlimited Private Projects
+     </li><br>
+     <li [ngClass] ="{strike : phoneSupport<1 ,'not-strike': phoneSupport>=1}">
+        Phone support
+     </li><br>
+     <li [ngClass] ="{strike : freeSubDomains<1 ,'not-strike': freeSubDomains>=1}">
+        <div [ngClass]="{hide:ud<=0}"><b >unlimited</b></div> <div class="sl">free sub Domains</div>
+     </li><br>
+     <li [ngClass] ="{strike : monthlyStatus<1 ,'not-strike': monthlyStatus>=1}">
+        Monthly status
+     </li>
+ </ul>
+ <br *ngIf="ud<=0">
+ <br *ngIf ="freeSubDomains<1">
+ <button class="btn btn-block btn-primary text-uppercase" > Button </button>
+</div>
